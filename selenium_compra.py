@@ -10,13 +10,9 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-
-servicedesk_email = "dft11.servicedesk@gmail.com"
+sender_email = "?"
+servicedesk_email = "?"
 servicedesk_password = "?"
-
-#servicedesk_email = "darkneroh@gmail.com"
-#servicedesk_password = "?"
-
 
 def comprar(url, site):
 
@@ -94,13 +90,9 @@ def planilha():
 
 def enviar_email(erro, site):
 
-	de = "matheuspsilva222@gmail.com"
-	para = servicedesk_email
-	senha = "?"
-
 	msg = MIMEMultipart()
-	msg ['From'] = de
-	msg['To'] = para
+	msg ['From'] = sender_email
+	msg['To'] = servicedesk_email
 	msg['Subject'] = "Erro na compra"
 
 	body = "Ocorreu um erro na compra do site [{1}]:\n({0})".format(erro, site)
